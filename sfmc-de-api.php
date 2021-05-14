@@ -24,11 +24,12 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
 //Set the content type to application/json
 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'); 
 
-
+/*
 //Execute the request
 $result = curl_exec($ch);
 if(curl_errno($ch)){
     echo 'Request Error:' . curl_error($ch);
 }
 print_r($result);
+*/
 ?>
