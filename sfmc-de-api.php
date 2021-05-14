@@ -4,19 +4,31 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 $url = 'https://mc-sc7jp15w47twh8j85754875m4.auth.marketingcloudapis.com/v2/token';
-$data = array('grant_type' => 'client_credentials', 'client_id' => '3z8wse7eiggnaggips7uihso', 'client_secret' => 'nD0lGBUZWg5K7Oee4RZS5VEe');
+//If will be easier to construct request as object and then convert to String.
+$jsonData = array('grant_type' => 'client_credentials', 
+                  'client_id' => '3z8wse7eiggnaggips7uihso', 
+                  'client_secret' => 'nD0lGBUZWg5K7Oee4RZS5VEe');
 
-// use key 'http' even if you send the request to https://...
-$options = array(
-    'http' => array(
-        'header'  => "Content-Type: application/json",
-        'method'  => 'POST',
-        'content' => http_build_query($data)
-    )
-);
-$context  = stream_context_create($options);
-$result = file_get_contents($url, false, $context);
-if ($result === FALSE) { /* Handle error */ }
+//Initiate cURL.
+$ch = curl_init($url);
 
-var_dump($result);
+//Encode the array into JSON.
+$jsonDataEncoded = json_encode($jsonData);
+
+//Tell cURL that we want to send a POST request.
+curl_setopt($ch, CURLOPT_POST, 1);
+
+//Attach our JSON string to the POST fields.
+curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
+
+//Set the content type to application/json
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'); 
+
+
+//Execute the request
+$result = curl_exec($ch);
+if(curl_errno($ch)){
+    echo 'Request Error:' . curl_error($ch);
+}
+print_r($result);
 ?>
