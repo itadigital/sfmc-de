@@ -8,3 +8,4 @@ return array(
     'baseAuthUrl' => 'https://mc-sc7jp15w47twh8j85754875m4.auth.marketingcloudapis.com/',
 'baseSoapUrl' => 'https://mc-sc7jp15w47twh8j85754875m4.soap.marketingcloudapis.com/',
 );
+?>
