@@ -62,7 +62,7 @@ curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
 
 //Set the content type to application/json
-$auth_bear = "Authorization: Bearer " . $json['access_token'];
+$auth_bear = "Authorization: Bearer " . $json[0];
 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json', '$auth_bear'));
 
 //Execute the request
