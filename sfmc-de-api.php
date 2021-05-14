@@ -29,6 +29,46 @@ $result = curl_exec($ch);
 if(curl_errno($ch)){
     echo 'Request Error:' . curl_error($ch);
 }
-print_r($result);
+//print_r($result);
 
+$json = json_decode($result);
+
+$url = 'https://mc-sc7jp15w47twh8j85754875m4.rest.marketingcloudapis.com/data/v1/async/dataextensions/key:4D5C02A7-F9C4-4027-9060-56C6D08F4432/rows';
+//If will be easier to construct request as object and then convert to String.
+$jsonData = array('items' => '{
+                               "WelcomeSent":false,
+                                "Touchpoint1Triggered":false,
+                                "Touchpoint1Sent":false,
+                                "Touchpoint2Triggered":false,
+                                "Touchpoint2Sent":false,
+                                "Touchpoint3Triggered":false,
+                                "Touchpoint3Sent":false,
+                                "FirstName":"Chris",
+                                "LastName":"Saldanha",
+                                "SubscriberKey":"987654321",
+                                "EmailAddress":"cs.saldanha@gmail.com"
+                               }');
+
+
+//Initiate cURL.
+$ch = curl_init($url);
+
+//Encode the array into JSON.
+$jsonDataEncoded = json_encode($jsonData);
+
+//Tell cURL that we want to send a POST request.
+curl_setopt($ch, CURLOPT_POST, 1);
+
+//Attach our JSON string to the POST fields.
+curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
+
+//Set the content type to application/json
+curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json", "Authorization: Bearer " . $json['access_token']));
+
+//Execute the request
+$result = curl_exec($ch);
+if(curl_errno($ch)){
+    echo 'Request Error:' . curl_error($ch);
+}
+print_r($result);
 ?>
