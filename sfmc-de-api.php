@@ -31,9 +31,9 @@ if(curl_errno($ch)){
 }
 //print_r($result);
 
-$json = json_decode($result);
+$json = json_encode($result);
 
-print($json); 
+var_dump($json["access_token"]);
 /*
 $url = 'https://mc-sc7jp15w47twh8j85754875m4.rest.marketingcloudapis.com/data/v1/async/dataextensions/key:4D5C02A7-F9C4-4027-9060-56C6D08F4432/rows';
 //If will be easier to construct request as object and then convert to String.
