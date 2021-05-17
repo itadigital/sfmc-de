@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 include 'sfmc-de-init.php';
 //echo $sfmc_at;
 
-$url = 'https://mc-sc7jp15w47twh8j85754875m4.rest.marketingcloudapis.com/data/v1/async/dataextensions/key:4D5C02A7-F9C4-4027-9060-56C6D08F4432/rows';
+$url = 'https://mc-sc7jp15w47twh8j85754875m4.rest.marketingcloudapis.com/data/v1/async/dataextensions/key:'.$_GET['DE'].'/rows';
 
 //Get url parameters and build array
 parse_str($_SERVER['QUERY_STRING'], $query_array);
