@@ -40,7 +40,7 @@ $ch = curl_init($url);
 //Encode the array into JSON.
 $jsonDataEncoded = json_encode($jsonData);
 
-//print_r($jsonDataEncoded);
+print_r($jsonDataEncoded);
 
 //Tell cURL that we want to send a POST request.
 //curl_setopt($ch, CURLOPT_POST, 1);
