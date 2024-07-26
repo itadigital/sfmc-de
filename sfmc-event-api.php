@@ -26,6 +26,11 @@ $jsonData = array("items" => [array(
                       $_GET['FilterName'] => $_GET['FilterValue']
                    )]
                  )]);
+$jsonData = array("ContactKey" => $_GET['ContactKey'],
+                    "EventDefinitionKey" => $_GET['EventDefinitionKey'],
+                    "Data" => [array(
+                      $_GET['FilterName'] => $_GET['FilterValue']
+                   )]);
 
 //Initiate cURL.
 $ch = curl_init($url);
