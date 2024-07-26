@@ -21,9 +21,10 @@ $jsonData = array("items" => [$query_array]);
 //If will be easier to construct request as object and then convert to String.
 $jsonData = array("ContactKey" => $_GET['ContactKey'],
                     "EventDefinitionKey" => $_GET['EventDefinitionKey'],
-                    "Data" => [array(
+                    "Data" => array(
                       $_GET['FilterName'] => $_GET['FilterValue']
-                   )]);
+                   )
+                 );
 
 //Initiate cURL.
 $ch = curl_init($url);
