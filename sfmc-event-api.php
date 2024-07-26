@@ -38,10 +38,10 @@ $jsonDataEncoded = json_encode($jsonData);
 print_r($jsonDataEncoded);
 
 //Tell cURL that we want to send a POST request.
-//curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POST, 1);
 
 //Tell cURL that we want to send a PUT request.
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+//curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
 
 //Attach our JSON string to the POST fields.
 curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
