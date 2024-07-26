@@ -19,13 +19,6 @@ $jsonData = array("items" => [$query_array]);
 */
 
 //If will be easier to construct request as object and then convert to String.
-$jsonData = array("items" => [array(
-                    "ContactKey" => $_GET['ContactKey'],
-                    "EventDefinitionKey" => $_GET['EventDefinitionKey'],
-                    "Data" => [array(
-                      $_GET['FilterName'] => $_GET['FilterValue']
-                   )]
-                 )]);
 $jsonData = array("ContactKey" => $_GET['ContactKey'],
                     "EventDefinitionKey" => $_GET['EventDefinitionKey'],
                     "Data" => [array(
