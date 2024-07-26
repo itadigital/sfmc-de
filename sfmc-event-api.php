@@ -22,6 +22,8 @@ $jsonData = array("items" => [$query_array]);
 $jsonData = array("ContactKey" => $_GET['ContactKey'],
                     "EventDefinitionKey" => $_GET['EventDefinitionKey'],
                     "Data" => array(
+                      'emailaddress' => $_GET['EmailAddress'],
+                      'subscriberkey' => $_GET['ContactKey'],
                       $_GET['FilterName'] => $_GET['FilterValue']
                    )
                  );
