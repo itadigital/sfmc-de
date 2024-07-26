@@ -14,7 +14,7 @@ $url = 'https://mc-sc7jp15w47twh8j85754875m4.rest.marketingcloudapis.com/interac
 parse_str($_SERVER['QUERY_STRING'], $query_array);
 //print_r($query_array);
 
-//Construct request from query parameters (ex. ?ContactKey=1234&EventDefinitionKey=event_key)
+//Construct request from query parameters (ex. ?ContactKey=contact_key&EmailAddress=email_address&EventDefinitionKey=event_key&FilterName=filter_name&FilterValue=filter_value)
 $jsonData = array("items" => [$query_array]);
 */
 
