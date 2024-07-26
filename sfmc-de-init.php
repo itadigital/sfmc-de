@@ -8,7 +8,8 @@ $url = 'https://mc-sc7jp15w47twh8j85754875m4.auth.marketingcloudapis.com/v2/toke
 //If will be easier to construct request as object and then convert to String.
 $jsonData = array('grant_type' => 'client_credentials', 
                   'client_id' => '3z8wse7eiggnaggips7uihso', 
-                  'client_secret' => 'nD0lGBUZWg5K7Oee4RZS5VEe');
+                  'client_secret' => 'nD0lGBUZWg5K7Oee4RZS5VEe',
+                  'account_id' => '524005175');
 
 //Initiate cURL.
 $ch = curl_init($url);
